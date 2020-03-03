@@ -135,11 +135,11 @@ EOL
 
 letsencrypt certonly --standalone --email root@$servername -d $servername --rsa-key-size 4096
 
-echo "Введите логин и пароль для панели  администратора (WEB)"
+echo "Enter Username and password for web login (WEB)"
 
-echo "Введите имя пользователя (WEB)"
+echo " Usermane:"
 read user
-echo "Введите пароль (WEB)"
+echo " Password:"
 read pass
 mkdir /etc/apache2	
 htpasswd -b -c /etc/apache2/.htpasswd $user $pass
