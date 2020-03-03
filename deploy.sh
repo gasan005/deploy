@@ -120,30 +120,18 @@ fastcgi_buffers 4 10240k;
 }
 
 EOL
-###rsync from old server###
-#echo "Enter ip address of the blocked server:"
-
-#read ipaddr
-#ssh-copy-id root@ipaddr
-
-#rsync -uvzh --progress -e "ssh" root@$ipaddr:/etc/nginx/ /etc/nginx/
-#rsync -uvzh --progress -e "ssh" root@$ipaddr:/etc/ocserv/ocserv.conf /etc/ocserv/
-#rsync -uvzh --progress -e "ssh" root@$ipaddr:/etc/ocserv/ocpasswd /etc/ocserv/
-#rsync -uvzh --progress -e "ssh" root@$ipaddr:/var/www/ /var/www/ 
-
-###--------------###
 
 letsencrypt certonly --standalone --email root@$servername -d $servername --rsa-key-size 4096
 
 echo "Enter Username and password for web login (WEB)"
 
-echo " Usermane:"
+echo " Username:"
 read user
 echo " Password:"
 read pass
 mkdir /etc/apache2	
 htpasswd -b -c /etc/apache2/.htpasswd $user $pass
-chown www-data:www-data -R /etc/ocserv/
+chown www-data:www-data  /etc/ocserv/
 mkdir /var/www/cgi-bin/
 cp index /var/www/cgi-bin/index
 cp edit /var/www/cgi-bin/edit
