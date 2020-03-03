@@ -1,6 +1,6 @@
 #!/bin/bash
 ####
-SERVER="https://a.djgjkg.site:8300"
+#SERVER="https://a.djgjkg.site:8300"
 ####
 echo "HTTP/1.0 200 OK"
 echo "Content-type: text/html"
@@ -24,7 +24,7 @@ echo '.brd {'\
 echo "</head>"
 echo "<body>"
 echo "<p align=center><font color=\"\#556B2F\">Manage Users</font></p>"
-echo "<a href=\"$SERVER/cgi-bin/index\">Add Users</a>"
+echo "<a href=\"/cgi-bin/index\">Add Users</a>"
 echo "<form method=GET action=\"${SCRIPT}\">"
 echo '<table width="100%" class="brd" bordercolor="#191970" border=2 cellpadding="1" cellspacing="1">'
 
@@ -72,7 +72,7 @@ else
                 echo "OKOK User<font color=red> $XX </font>deported to hell."
                 echo "<script language=\"JavaScript\">"
                 echo "setTimeout(function () {"
-                echo  "window.location.href = \"$SERVER/cgi-bin/edit\""
+                echo  "window.location.href = \"/cgi-bin/edit\""
                 echo "}, 2000);"
                 echo "</script>"
 fi

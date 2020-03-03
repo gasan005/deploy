@@ -1,5 +1,5 @@
 #!/bin/bash
-SERVER="https://a.djgjkg.site:8300"
+#SERVER="https://a.djgjkg.site:8300"
 
 
 echo "HTTP/1.0 200 OK"
@@ -19,7 +19,7 @@ echo '<style>'\
 echo "</head>"
 echo "<body>"
 echo "<p align=center><font color=\"\#556B2F\">Add device</font></p>"
-echo "<a href=\"$SERVER/cgi-bin/edit\">Manage Users</a>"
+echo "<a href=\"/cgi-bin/edit\">Manage Users</a>"
 echo "<form method=GET action=\"${SCRIPT}\">"\
 	'<table nowrap>'\
 	'<tr><td>User</TD><TD><input type="text" required name="user" placeholder="Login" size=12></td></tr>'\
@@ -62,7 +62,7 @@ yes $YY | ocpasswd -c /etc/ocserv/ocpasswd $XX
 #echo $XX : $ZZ \"$YY\" >>  ipsec.secrets # для ipsec
 
 echo "<script language=\"JavaScript\">"
-echo  "window.location.href = \"$SERVER/cgi-bin/index\""
+echo  "window.location.href = \"/cgi-bin/index\""
 echo "</script>"
 
 fi
